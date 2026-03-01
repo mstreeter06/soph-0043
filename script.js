@@ -78,3 +78,18 @@ if (feedbackForm) {
         alert("Thank you, " + customerData.name + "! Your request has been saved.");
     });
 }
+
+// --- NEWSLETTER SUBSCRIPTION (footer forms) ---
+document.querySelectorAll('footer form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = form.querySelector('input[type="email"]');
+        const email = emailInput ? emailInput.value.trim() : '';
+        if (!email) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        alert(`Thanks for subscribing with ${email}!`);
+        form.reset();
+    });
+});
