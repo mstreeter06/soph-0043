@@ -61,21 +61,40 @@ const feedbackForm = document.getElementById('feedback-form');
 if (feedbackForm) {
     feedbackForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Capture form data including the new checkbox
-        const customerData = {
-            name: document.getElementById('user-name').value,
-            email: document.getElementById('user-email').value,
-            phone: document.getElementById('user-phone').value,
-            type: document.getElementById('request-type').value,
-            message: document.getElementById('message').value,
-            customOrder: document.getElementById('custom-order').checked // Captures true/false
-        };
 
-        // Save to localStorage using the user's name as the Key
-        localStorage.setItem(customerData.name, JSON.stringify(customerData));
-        
-        alert("Thank you, " + customerData.name + "! Your request has been saved.");
+        try {
+            const nameEl = feedbackForm.querySelector('#user-name');
+            const emailEl = feedbackForm.querySelector('#user-email');
+            const phoneEl = feedbackForm.querySelector('#user-phone');
+            const typeEl = feedbackForm.querySelector('#request-type');
+            const messageEl = feedbackForm.querySelector('#message');
+            const customOrderEl = feedbackForm.querySelector('#custom-order');
+
+            const name = nameEl ? nameEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            const phone = phoneEl ? phoneEl.value.trim() : '';
+            const type = typeEl ? typeEl.value : '';
+            const message = messageEl ? messageEl.value.trim() : '';
+            const customOrder = !!(customOrderEl && customOrderEl.checked);
+
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            const customerData = { name, email, phone, type, message, customOrder };
+
+            // Use a safe storage key: prefer name, fallback to timestamp
+            const storageKey = name || `request-${Date.now()}`;
+            localStorage.setItem(storageKey, JSON.stringify(customerData));
+
+            console.log('Saved contact request to localStorage key=', storageKey, customerData);
+            alert(`Thank you, ${name}! Your request has been saved.`);
+            feedbackForm.reset();
+        } catch (err) {
+            console.error('Error saving feedback form:', err);
+            alert('Sorry — there was a problem saving your request. See console for details.');
+        }
     });
 }
 
