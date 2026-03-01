@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Haven Bookstore | Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Essential Modal Styling */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
+        .modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 40%; border-radius: 8px; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+        #cart-items-list p { border-bottom: 1px solid #eee; padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Book Haven Inkwell Logo"> 
+        <h1>Book Haven Bookstore</h1> 
+        <nav> 
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Browse Books</a></li>
+                <li><a href="about.html">About & Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Curated Collection</h2>
+        <div style="float: right; margin-bottom: 10px;">
+            <button id="view-cart-btn">View Cart</button> 
+            <button id="clear-cart">Clear Cart</button>
+            <button id="process-order">Process Order</button>
+        </div>
+
+        <table border="1">
+            <tr>
+                <td><img src="Client3_Book1.png" alt="Brie Mine 4Ever"><p>Brie Mine 4Ever - $25.00</p><button class="add-to-cart" data-name="Brie Mine 4Ever" data-price="25.00">Add to Cart</button></td>
+                <td><img src="Client3_Book2.png" alt="Glory Riders"><p>Glory Riders - $18.00</p><button class="add-to-cart" data-name="Glory Riders" data-price="18.00">Add to Cart</button></td>
+                <td><img src="Client3_Book3.png" alt="Sorcerer's Chronicles"><p>Sorcerer's Chronicles - $15.00</p><button class="add-to-cart" data-name="Sorcerer's Chronicles" data-price="15.00">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td><img src="Client3_Magazine1.png" alt="Ball Magazine"><p>Ball Magazine - $10.00</p><button class="add-to-cart" data-name="Ball Magazine" data-price="10.00">Add to Cart</button></td>
+                <td><img src="Client3_Magazine2.png" alt="Travel Magazine"><p>Travel Magazine - $12.00</p><button class="add-to-cart" data-name="Travel Magazine" data-price="12.00">Add to Cart</button></td>
+                <td><img src="Client3_Magazine3.png" alt="Eat. Magazine"><p>Eat. Magazine - $15.00</p><button class="add-to-cart" data-name="Eat. Magazine" data-price="15.00">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td><img src="Client3_Notebook.png" alt="Notebook"><p>Notebook - $20.00</p><button class="add-to-cart" data-name="Notebook" data-price="20.00">Add to Cart</button></td>
+                <td><img src="Client3_Stickers.png" alt="Stickers"><p>Stickers - $22.00</p><button class="add-to-cart" data-name="Stickers" data-price="22.00">Add to Cart</button></td>
+                <td><img src="Client3_ToteBag.png" alt="Tote Bag"><p>Tote Bag - $30.00</p><button class="add-to-cart" data-name="Tote Bag" data-price="30.00">Add to Cart</button></td>
+            </tr>
+        </table>
+
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Shopping Cart</h3>
+                <div id="cart-items-list">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <section>
+            <h3>Join our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+        <div class="social-links">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> | <a href="gallery.html">Gallery</a> | <a href="about.html">About</a> | <a href="events.html">Events</a>
+        </nav>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

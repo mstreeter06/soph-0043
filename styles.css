@@ -1,0 +1,121 @@
+/* --- Global Styles --- */
+body {
+    font-family: Calibri, sans-serif; /* Task 1 Choice: Body text  */
+    background-color: #FFF7EE; /* Parchment White  */
+    color: #131C26; /* Bookish Black  */
+    margin: 0;
+    padding: 0; /* keep body unpadded so header/footer span full width */
+    line-height: 1.6;
+}
+
+/* --- Typography Hierarchy  --- */
+h1, h2 {
+    font-family: Arial, sans-serif; /* Arial Bold for Titles */
+    color: #2E4057; /* Inkwell Blue  */
+    font-weight: bold;
+}
+
+h1 { font-size: 30px; } /* Title Large */
+h2 { font-size: 25px; } /* Title */
+
+h3 {
+    font-family: 'Comfortaa', cursive, sans-serif; /* Subtitle  */
+    color: #C7B65E; /* Aged Gold  */
+    font-size: 15px;
+}
+
+p { font-size: 15px; } /* Body Normal */
+.body-large { font-size: 20px; } /* Body Large */
+caption { font-family: Arial; font-weight: bold; font-size: 11px; }
+
+/* --- Header & Nav --- */
+header {
+    background-color: #2E4057; /* Inkwell Blue */
+    color: #FFF7EE; /* Parchment White */
+    padding: 20px 0; /* vertical padding only; full-width header retained */
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #FFF7EE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Gallery Grid (3x3 Table)  --- */
+.gallery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.gallery-table td {
+    border: 1px solid #C7B65E; /* Aged Gold border */
+    padding: 15px;
+    text-align: center;
+    width: 33.33%; /* Creates 3 columns [cite: 25] */
+}
+
+/* --- Buttons & Forms --- */
+button, .btn-add-to-cart {
+    background-color: #F7B3CC; /* Dusty Rose accent  */
+    color: #131C26;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #EE583F; /* Intensity Indigo for hover effect  */
+    color: white;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #2E4057;
+    color: white;
+    padding: 20px 0; /* vertical padding only; full-width footer retained */
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Apply padding only to the main page content. */
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --- Link Styling --- */
+/* Standard and Visited Links */
+footer a, 
+footer a:visited,
+main a,
+main a:visited {
+    color: #C7B65E; /* Aged Gold to match your h3 titles */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover State */
+footer a:hover,
+main a:hover {
+    color: #F7B3CC; /* Dusty Rose to match your buttons */
+    text-decoration: underline;
+}
+
+/* Header links are already white, but let's ensure they have a hover state */
+header nav ul li a:hover {
+    color: #F7B3CC; /* Dusty Rose */
+}

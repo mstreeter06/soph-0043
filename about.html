@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Haven Bookstore | About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Book Haven Inkwell Logo"> 
+        <h1>Book Haven Bookstore</h1> 
+        <nav> 
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Browse Books</a></li>
+                <li><a href="about.html">About & Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Book Haven</h2>
+            <p>A local sanctuary for book lovers since 1995. We specialize in rare finds and community events.</p>
+            
+            <h3>Business Hours</h3>
+            <ul>
+                <li>Monday - Friday: 9:00 AM - 8:00 PM</li>
+                <li>Saturday: 10:00 AM - 6:00 PM</li>
+                <li>Sunday: Closed</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Feedback & Custom Orders</h2>
+            <form id="feedback-form">
+                <label for="user-name">Name:</label><br>
+                <input type="text" id="user-name" name="name" required><br>
+
+                <label for="user-email">Email:</label><br>
+                <input type="email" id="user-email" name="email" required><br>
+
+                <label for="user-phone">Phone:</label><br>
+                <input type="tel" id="user-phone" name="phone"><br>
+
+                <label for="request-type">Type:</label><br>
+                <select id="request-type">
+                    <option value="feedback">General Feedback</option>
+                    <option value="custom">Custom Book Search</option>
+                </select><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" rows="4" required></textarea><br>
+
+                <input type="checkbox" id="custom-order" name="custom-order">
+                <label for="custom-order">Check if this is a Custom Order</label><br><br>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h3>Join our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+        <div class="social-links">
+            <a href="#">Instagram</a> | <a href="#">Facebook</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> | <a href="gallery.html">Gallery</a> | <a href="about.html">About</a> | <a href="events.html">Events</a>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
